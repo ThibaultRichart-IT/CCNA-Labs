@@ -20,7 +20,21 @@ Ce laboratoire a pour objectif de découvrir les principales fonctions des équi
 
 ### Étape 1
 
-...
+Trouver les adresses logique et physique de chaque routeurs.
+
+### Routeur 1
+<img width="580" height="401" alt="R1" src="https://github.com/user-attachments/assets/be0f9d1e-d9e9-4acc-ad06-2e9dc84b98a9" />
+
+### Routeur 2
+<img width="588" height="430" alt="R2" src="https://github.com/user-attachments/assets/a74df742-552d-4c80-9b34-b3be020ef08f" />
+
+### Routeur 3 
+<img width="608" height="430" alt="R3" src="https://github.com/user-attachments/assets/b7e8c1e8-b16c-4e9f-865a-336c86aa43f0" />
+
+### Routeur 4
+<img width="609" height="417" alt="R4" src="https://github.com/user-attachments/assets/9c79cab6-0914-4353-9ea2-fabc87484d01" />
+
+
 
 ### Étape 2
 
