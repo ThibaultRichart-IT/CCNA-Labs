@@ -9,7 +9,7 @@ Ce laboratoire a pour objectif de découvrir les principales fonctions des équi
 - Comprendre le rôle d'un switch et d'un routeur.
 - Utiliser les commandes de diagnostic.
 - Observer les tables MAC et la table de routage.
-- Configurer une interface réseau.
+- Configurer un interface réseau.
 - Ajouter une route statique.
 
 ## Topologie
@@ -20,7 +20,7 @@ Ce laboratoire a pour objectif de découvrir les principales fonctions des équi
 
 ### Étape 1
 
-Trouver les adresses logique et physique de chaque routeurs.
+Trouver les adresses logiques et physiques de chaque routeurs.
 
 ### Routeur 1
 <img width="580" height="401" alt="R1" src="https://github.com/user-attachments/assets/be0f9d1e-d9e9-4acc-ad06-2e9dc84b98a9" />
@@ -38,7 +38,7 @@ Trouver les adresses logique et physique de chaque routeurs.
 
 ### Étape 2
 
-Vérifier la connectivités entre les routeurs depuis routeur1.
+Vérifier la connectivité entre les routeurs depuis routeur1.
 
 Routeur 1 -> Routeur 2
 
@@ -54,7 +54,7 @@ Routeur 1 -> Routeur 4
 
 ### Étape 2.1 
 
-Vérifier la connectivités entre les routeurs 3 et 4 depuis le routeur2.
+Vérifier la connectivité entre les routeurs 3 et 4 depuis le routeur2.
 
 Routeur 2 -> Routeur 3
 
@@ -93,7 +93,7 @@ Regarder la routing table sur R1.
 **10.10.10.0/24 sur Ge0/0** avec la lettre **C**, qui signifie "Connected", on déduit donc que ce réseau est directement connecté à l'interface Ge0/0
 et
 **10.10.10.1/32 sur Ge0/0 ** avec la lettre **L**, qui signifie "Local", on déduit donc qu'il s'agit de l'adresse IP du Routeur1, connecté a l'interface Ge0/0.
-Je remarque aussi que pour le routeur, c'est un masque en /32 car il n'as besoin que d'une seule adresse IP.
+Je remarque aussi la présence d'une route en /32 avec le code L (Local). Cette route représente l'adresse IP exacte de l'interface du routeur et permet au routeur d'identifier le trafic qui lui est destiné directement.
 
 ### Étape 5
 
@@ -122,7 +122,7 @@ Vérifier la routing table de R1
 
 <img width="481" height="245" alt="R1 route 2" src="https://github.com/user-attachments/assets/b2265243-d3fc-4d27-80ab-4863e9b874f9" />
 
-Observation : Le routeur as maintenant deux routes pour chaque interfaces et peux envoyer du trafic entre les hotes sur les réseaux 10.10.10.0/24 et 10.10.20.0/24.
+Observation : Le routeur a maintenant deux routes pour chaque interfaces et peux envoyer du trafic entre les hôtes sur les réseaux 10.10.10.0/24 et 10.10.20.0/24.
 
 
 ### Étape 6
