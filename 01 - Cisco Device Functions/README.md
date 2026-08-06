@@ -8,7 +8,7 @@ Ce laboratoire a pour objectif de découvrir les principales fonctions des équi
 
 - Comprendre le rôle d'un switch et d'un routeur.
 - Utiliser les commandes de diagnostic.
-- Observer les tables MAC et la table de routage.
+- Observer la table MAC d'un commutateur et la table de routage IPv4 d'un routeur.
 - Configurer un interface réseau.
 - Ajouter une route statique.
 
@@ -150,7 +150,7 @@ Observation : Le routeur1 est maintenant configuré pour que les paquets en dest
 
 ## Ce que j'ai appris
 
-J'ai compris comment fonctionne la table de routages des routeurs et la table MAC des commutateurs, à utiliser des commandes de diagnostics, configurer un interface réseau et à ajouter route statique à un routeur.
+J'ai compris le fonctionnement de la table de routage des routeurs et de la table MAC des commutateurs. J'ai appris à utiliser des commandes de diagnostic, configurer une interface réseau et ajouter une route statique sur un routeur.
 
 ## Difficultés rencontrées
 
