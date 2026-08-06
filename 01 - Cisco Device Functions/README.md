@@ -38,7 +38,78 @@ Trouver les adresses logique et physique de chaque routeurs.
 
 ### Étape 2
 
-...
+Vérifier la connectivités entre les routeurs depuis routeur1.
+
+Routeur 1 -> Routeur 2
+
+<img width="516" height="107" alt="Ping R1-R2" src="https://github.com/user-attachments/assets/23c84f98-6beb-42e3-ae32-3c3fe1e9eb2e" />
+
+Routeur 1 -> Routeur 3
+
+<img width="495" height="111" alt="Ping R1-R3" src="https://github.com/user-attachments/assets/65522dc5-9595-4f8f-83cf-0cf95df54ce4" />
+
+Routeur 1 -> Routeur 4
+
+<img width="500" height="108" alt="Ping R1-R4" src="https://github.com/user-attachments/assets/f7598155-4a96-48fd-ab01-a745f8276937" />
+
+### Étape 2.1 
+
+Vérifier la connectivités entre les routeurs 3 et 4 depuis le routeur2.
+
+Routeur 2 -> Routeur 3
+
+<img width="485" height="105" alt="Ping R2-R3" src="https://github.com/user-attachments/assets/48cfa973-49ce-4a1b-9a42-37d146859566" />
+
+Routeur 2 -> Routeur 4 
+
+<img width="483" height="106" alt="Ping R2-R4" src="https://github.com/user-attachments/assets/12b3fd4a-26b3-488e-817a-8a9e189377df" />
+
+### Étape 3 
+
+Vérifier les adresses MAC apprise de manière dynamique sur SW1.
+
+<img width="338" height="170" alt="SW1 MAC" src="https://github.com/user-attachments/assets/304977d2-8fd0-494b-a204-2d6590a1f3d3" />
+
+Idem sur SW2.
+
+<img width="332" height="197" alt="SW2 MAC" src="https://github.com/user-attachments/assets/c13f5c0d-bc54-428c-bd60-4c46984035a1" />
+
+### Étape 3.1
+
+Supprimer la table d'adresse MAC de SW1.
+
+<img width="335" height="198" alt="SW1 clear" src="https://github.com/user-attachments/assets/a90de735-7d2d-4a9f-8a9f-00aa5b4d078f" />
+
+Observation : La table d'adresses MAC dynamiques est supprimée, mais une adresse MAC réapparaît rapidement sur Fa0/24, car le switch apprend continuellement les adresses MAC des équipements connectés lorsqu'ils émettent le moindre trafic.
+
+### Étape 4
+
+Regarder la routing table sur R1.
+
+<img width="590" height="215" alt="R1 route" src="https://github.com/user-attachments/assets/10b2f79d-06e0-4fc7-8455-83650a9ddb09" />
+
+Observation : "10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks" indique que dans le réseau 10.0.0.0/8, le routeur connaît 2 sous-réseaux, avec 2 masques différents.
+**10.10.10.0/24 sur Ge0/0** avec la lettre **C**, qui signifie "Connected", on déduit donc que ce réseau est directement connecté à l'interface Ge0/0
+et
+**10.10.10.1/32 sur Ge0/0 ** avec la lettre **L**, qui signifie "Local", on déduit donc qu'il s'agit de l'adresse IP du Routeur1, connecté a l'interface Ge0/0.
+Je remarque aussi que pour le routeur, c'est un masque en /32 car il n'as besoin que d'une seule adresse IP.
+
+### Étape 5
+
+Configurer une IP 10.10.20.1/24 sur l'interface Ge0/1 sur R1.
+
+<img width="438" height="134" alt="R1 G0-1" src="https://github.com/user-attachments/assets/7df375b3-83f3-4d9f-9cec-320e3a1e21ad" />
+
+L'adresse est créer, je convertis le masque /24 en 255.255.255.0 pour l'attribution manuel.
+
+### Étape 5.1
+
+Je vérifie les interfaces Ge0/0 et Ge0/1
+
+<img width="567" height="111" alt="R1 G0-1 1" src="https://github.com/user-attachments/assets/e1c88c69-e710-4463-bb28-1e2950083059" />
+Observation : L'adresse que je viens de créer est bien affichée sur mon port Ge0/1 en revanche je remarque que le statuts de mon port Ge0/1 est "administratively down", il faut donc que j'active ce port.
+Les interfaces de routeurs sont administrativement fermée par défaut, la commande 'no shutdown' les rend ouverte.
+
 
 ## Commandes utilisées
 
