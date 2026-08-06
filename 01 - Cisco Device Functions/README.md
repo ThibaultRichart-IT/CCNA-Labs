@@ -76,11 +76,11 @@ Idem sur SW2.
 
 ### Étape 3.1
 
-Supprimer la table d'adresse MAC de SW1.
+Supprimer la table MAC de SW1.
 
 <img width="335" height="198" alt="SW1 clear" src="https://github.com/user-attachments/assets/a90de735-7d2d-4a9f-8a9f-00aa5b4d078f" />
 
-**Observation :** La table d'adresses MAC dynamiques est supprimée, mais une adresse MAC réapparaît rapidement sur Fa0/24, car le switch apprend continuellement les adresses MAC des équipements connectés lorsqu'ils émettent le moindre trafic.
+**Observation :** La table MAC dynamiques est supprimée, mais une adresse MAC réapparaît rapidement sur Fa0/24, car le switch apprend continuellement les adresses MAC des équipements connectés lorsqu'ils émettent le moindre trafic.
 
 ### Étape 4
 
@@ -153,6 +153,10 @@ Observation : Le routeur1 est maintenant configuré pour que les paquets en dest
 J'ai compris comment fonctionne la table de routages des routeurs et la table MAC des commutateurs, à utiliser des commandes de diagnostics, configurer un interface réseau et à ajouter route statique à un routeur.
 
 ## Difficultés rencontrées
+
+Légère confusion quand je supprime la table MAC du switch et quand je vois qu'il y a (encore) une entrée dans la table MAC, au final c'est parce qu'une fois la table supprimer, le switch n'as pas d'entrée dans sa table et le moindre transfert de paquet et remis a jour dans sa table MAC.
+Donc c'était en fait parfaitement normal.
+
 
 ## Conclusion
 
